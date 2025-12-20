@@ -1,1 +1,4 @@
-<p>todo-items works!</p>
+<li appHighlightCompletedTodo [isCompleted]="todoData().completed">
+    <input type="checkbox" [checked]="todoData().completed" id="todo-{{todoData().id}}">
+    <label for="todo-{{todoData().id}}"></label>{{todoData().title}}
+</li>
