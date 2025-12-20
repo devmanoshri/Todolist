@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Todo } from '../../model/todo.type';
 import { HighlightCompletedTodoDirective } from '../../directives/highlight-completed-todo.directive';
 
@@ -10,5 +10,10 @@ import { HighlightCompletedTodoDirective } from '../../directives/highlight-comp
 })
 export class TodoItemsComponent {
   todoData = input.required<Todo>();
+  todoToggled = output<Todo>();
+
+  todoClicked(){
+    this.todoToggled.emit(this.todoData());
+  }
 
 }
